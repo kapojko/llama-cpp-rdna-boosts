@@ -90,3 +90,9 @@ optional block by the maintainer (the r288 block-number re-org moved `mixed-kv` 
 
 Cumulative tree with both applied in numeric order (`0100` then `0101`): `ffb271162bc24448f741d4a91e0f26383037df32`
 (`release.json.optional_tree`).
+
+## Proposed artifacts not registered in `release.json`
+
+| artifact | proposed block | status |
+|---|---|---|
+| `gqa6-fold-rdna3/` | **`0102`** | Local r359 rework of PR #362: RDNA3_0 padded GQA-6 tile folding, default OFF with `GGML_HIP_FA_TILE_GQA6_FOLD=1`, a dedicated `fold=true` TU, and the requested boundary/deep-cache/derived-mask tests. Standalone strict apply reproduces the recorded tree. Cumulative application after 0101 is unresolved because 0101 and R1 rewrite the same template declarations and generator region. It is therefore not registered in `release.json`, has no claimed cumulative tree or green `validate-set.sh`, and must not be used with `--include-optional-all`. |
